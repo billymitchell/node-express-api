@@ -4,8 +4,11 @@
 // When API error, send error email to wmitchell@centricitynow.com with Sendgrid
 // whitelist Sendgrid emails, test emails being held
 require('dotenv').config()
+
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = `mongodb+srv://wmitchell:${process.env.MONGO_DB_PW}@cluster0.pbglcpz.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://billymitchell:${process.env.MONGO_DB_PW}@centricity-shipping-api.ww7gdwo.mongodb.net/?retryWrites=true&w=majority`;
+const client = new MongoClient(uri)
+
 const Joi = require('joi')
 const express = require('express')
 const app = express();
@@ -13,33 +16,10 @@ const app = express();
 const sengrid = require('./sendgrid');
 const brightsites_stores = require('./brightsites_stores')
 
-//console.log(brightsites_stores);
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-    serverApi: {
-      version: ServerApiVersion.v1,
-      strict: true,
-      deprecationErrors: true,
-    }
-  });
-  async function connect_to_MongoDB() {
-    try {
-      // Connect the client to the server	(optional starting in v4.7)
-      await client.connect();
-      // Send a ping to confirm a successful connection
-      await client.db("admin").command({ ping: 1 });
-      console.log("Pinged your deployment. You successfully connected to MongoDB!");
-    } finally {
-      // Ensures that the client will close when you finish/error
-      await client.close();
-    }
-  }
-  connect_to_MongoDB().catch(console.dir);
-
 // convert all incoming body to JSON
 app.use(express.json())
 
+// validation schema
 const tracking_submission_schema = Joi.object({
     brightstores_site_url: Joi.string().required(),
     brightstores_order_id: Joi.number().required(),
@@ -50,14 +30,21 @@ const tracking_submission_schema = Joi.object({
     tracking_number: Joi.string().required(),
 })
 
-// Mongo DB UN: wmitchell
-// 
-
+// initialize variables 
 let incoming_data
 let validation_error = []
 let formatted_data
 let brightsites_response
 let response_from_brightsites
+
+
+// database object 
+let test_data = {
+    "incoming_data": incoming_data,
+    "validation_response": validation_error,
+    "formatted_data": formatted_data,
+    "response_from_brightsites": response_from_brightsites,
+}
 
 const format_request_to_brightsites = (incoming_data) => {
     formatted_data = incoming_data
@@ -128,3 +115,33 @@ app.listen(port, () => {
     console.log(`its alive on http://localhost:${port}`)
 })
 
+
+
+// submit data to DB function
+async function connect_to_db() {
+    try {
+      await client.connect();
+      //await listDatabases(client)
+      await createData(test_data)
+    } 
+    catch (error){
+        console.log(error)
+    }
+    finally {
+      await client.close();
+    }
+}
+
+// submit data to DB
+connect_to_db().catch(console.error)
+
+
+async function listDatabases(client) {
+    const databasesList = await client.db().admin().listDatabases()
+    console.log(databasesList);
+}
+
+
+async function createData(client, data) {
+    client.db("centricity-shipping-api-log").collection("logs").insertOne(data)
+}
