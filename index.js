@@ -5,15 +5,15 @@
 // whitelist Sendgrid emails, test emails being held
 // define mongo dp lookup ID 
 
-
 // import keys 
 require('dotenv').config()
-// import mondo db
-const { MongoClient, ServerApiVersion } = require('mongodb');
 
 // initialize express app 
 const express = require('express')
 const app = express();
+
+//get updateOrder
+const updateOrder = require("./update_order")
 
 // get sendgrid 
 const sengrid = require('./sendgrid');
@@ -32,97 +32,19 @@ var current_date_formatted = current_date.getFullYear() +
 ":"  + current_date.getMinutes() +
 ":" + current_date.getSeconds();
 
- // submit data to DB function
- async function update_database(request_history) {
-
-    // mongo db database url
-    const uri = `mongodb+srv://billymitchell:${process.env.MONGO_DB_PW}@centricity-shipping-api.ww7gdwo.mongodb.net/?retryWrites=true&w=majority`;
-    // initialize mongo db 
-    const client = new MongoClient(uri)
-    
-
-    // try to connect 
-    try {
-        await client.connect();
-        //await listDatabases(client)
-
-        // post data to database
-        await createData(client, request_history)
-    } 
-    // catch connection error
-    catch (error){
-        console.log(error)
-        // TODO: send email of error to admin
-    }
-    // close connection 
-    finally {
-        await client.close();
-    }
-
-    async function createData(client, request_history) {
-        const result = await client.db("centricity-shipping-api-log").collection("logs").insertOne(request_history)
-        console.log(`New listing created with the following id: ${result.insertedId}`)
-    }
-
-}
-
-
-async function updateOrder(items_in_shipment, updateOrderPayload) {
-
-
-    // request object
-    let request_history = []
-
-
-    let url = `${items_in_shipment[0].order_metadata_brightstores_site_url}/api/v2.6.0/orders/${items_in_shipment[0].brightstores_order_id}/shipments?token=${items_in_shipment[0].api_key}`;
-    let response = await fetch(url, {
-      method: 'POST',
-      redirect: 'follow',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: updateOrderPayload,
-    });
-    // // if error
-    if (!response.ok) {
-      
-      request_history.push({
-        "response_okay": response.ok,
-        "status_text": response.statusText,
-        "status": response.status,
-        "error": response.error,
-        "payload": updateOrderPayload,
-      })
-      
-    }
-      // if no error
-    if (response.ok) {
-     
-      request_history.push({
-        "response_okay": response.ok,
-        "status_text": response.statusText,
-        "status": response.status,
-        "error": response.error,
-        "payload": updateOrderPayload,
-      })
-    }
-    return request_history[0]
-}
-
-
 // Express post method
 app.post("/brightsites/shipping/tracking/mailparser/order-items/", async (request, response) => {
 
-    // set body object 
-    inputData = request.body
+  // set body object 
+  inputData = request.body
 
-    // date of data sent to mailparser
-    let date_received = inputData.received_at
+  // date of data sent to mailparser
+  let date_received = inputData.received_at
 
-    // items to upload
-    let items = inputData.mail_attachments
+  // items to upload
+  let items = inputData.mail_attachments
 
-   // initialize empty object 
+  // get all tracking codes
   let all_tracking_codes = []
   
   // insert all tracking codes into all_tracking_codes
@@ -130,15 +52,16 @@ app.post("/brightsites/shipping/tracking/mailparser/order-items/", async (reques
     all_tracking_codes.push(item.tracking_number)
   });
   
-  // find unique tracking numbers and create an array 
+  // find unique tracking codes
   let unique_tracking_numbers = [...new Set(all_tracking_codes)];
   
-  // do the number of times you have a unique tracking number
+  // For each unique code
   for (let index = 0; index < unique_tracking_numbers.length; index++) {
 
+    // Item in shipment
     let items_in_shipment = []
   
-    // for each item
+    // For each item received
     items.forEach(item => {
   
           // if item tracking matched this tracking number
@@ -151,15 +74,15 @@ app.post("/brightsites/shipping/tracking/mailparser/order-items/", async (reques
           // for each key 
           brightsites_stores.store_key.forEach(key => {
   
-  
-            //if the URLS match the item 
-            if (item.order_metadata_brightstores_site_url === key.URL){
-              // add the key to the items
-              item["api_key"] = key.API_Key
-  
-            }
+          //if the URLS match the item 
+          if (item.order_metadata_brightstores_site_url === key.URL){
+            // add the key to the items
+            item["api_key"] = key.API_Key
+
+          }
           });
           
+          // Get and format the item ship date
           let unformatted_ship_date = item.ship_date;
           let [month, day, year] = unformatted_ship_date.split("/");
           let formatted_ship_date = `${year}-${month}-${day}`;
@@ -169,7 +92,6 @@ app.post("/brightsites/shipping/tracking/mailparser/order-items/", async (reques
   
   
     let items_in_shipment_minified = []
-  
     
     items_in_shipment.forEach(item => {
       items_in_shipment_minified.push({
@@ -189,10 +111,19 @@ app.post("/brightsites/shipping/tracking/mailparser/order-items/", async (reques
         },
     });  
 
-    request_history = await updateOrder(items_in_shipment, updateOrderPayload)
-    await update_database(request_history).catch(console.error)
+    request_history = await updateOrder.updateOrder(items_in_shipment, updateOrderPayload)
+    
+    // if error
+    if (typeof request_history["error"] === "undefined" ){
+      // respond to request with error
+      response.status(400).send("Bad Request", request_history)
+    }
+    // if no error 
+    if (typeof request_history["error"] !== "undefined" ) {
+      response.status(200).send("Request Compleat")
+      await update_database.update_database(request_history).catch(console.error)
+    }
   }
-
 })
  
 const port = process.env.PORT || 8080;
