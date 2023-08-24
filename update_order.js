@@ -21,7 +21,6 @@ async function updateOrder(items_in_shipment, updateOrderPayload) {
         "response_okay": response.ok,
         "status_text": response.statusText,
         "status": response.status,
-        "error": response.error,
         "payload": updateOrderPayload,
       })
       
