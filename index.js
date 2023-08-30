@@ -4,6 +4,12 @@
 // whitelist Sendgrid emails, test emails being held
 // define mongo dp lookup ID 
 
+
+
+//let zapier_data = ""
+//console.log(JSON.parse(zapier_data));
+
+
 // import keys 
 require('dotenv').config()
 
