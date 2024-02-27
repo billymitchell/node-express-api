@@ -10,6 +10,30 @@
 //console.log(JSON.parse(zapier_data));
 
 
+let run_test = false
+
+let testing_data = `{
+  "id": "b44814568f99e088d3282e9d0c0e115f",
+  "received_at": "2024-02-23 03:49:22",
+  "processed_at": "2024-02-23 03:49:24",
+  "mail_attachments": [
+      {
+          "brightstores_order_id": "100369",
+          "order_metadata_brightstores_site_url": "https://ftg-shop.mybrightsites.com",
+          "brightstores_shipping_method": "UPS Worldwide Express",
+          "order_items_brightstores_line_item_id": "28227236",
+          "order_items_code": "121998-5star-pushpin",
+          "order_items_name": "Flatback Clutch Pin",
+          "shipment_quantity": "350.00",
+          "ship_date": "2/22/2024",
+          "tracking_number": "1Z52499E6754487188"
+      },
+  ]
+}
+`
+
+
+
 // import keys 
 require('dotenv').config()
 
@@ -21,7 +45,7 @@ const app = express();
 const updateOrder = require("./update_order")
 
 // get sendgrid 
-const sengrid = require('./sendgrid');
+const sendgrid = require('./sendgrid');
 
 // get URL mapping of BS 
 const brightsites_stores = require('./brightsites_stores')
@@ -47,8 +71,17 @@ let all_tracking_codes = []
 // Express post method
 app.post("/brightsites/shipping/tracking/mailparser/order-items/", async (request, response) => {
 
-  // set body object 
-  let items = request.body.mail_attachments
+  let items
+
+  // if test use testing data 
+  if (run_test == true) {
+    console.log("Running Test");
+    items = JSON.parse(testing_data).mail_attachments
+    console.log(items);
+  } if (run_test == false) {
+    // set body object with incoming data from post method
+    items = request.body.mail_attachments
+  }
 
   // date of data sent to mailparser
   let date_received = request.body.received_at
