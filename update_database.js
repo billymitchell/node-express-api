@@ -5,7 +5,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 async function update_database(request_history) {
 
     // mongo db database url
-    const uri = `mongodb+srv://billymitchell:${process.env.MONGO_DB_PW}@centricity-shipping-api.ww7gdwo.mongodb.net/?retryWrites=true&w=majority`;
+    const uri = `mongodb+srv://billymitchell:${process.env.MONGO_DB_PW}@centricity-shipping-api.ww7gdwo.mongodb.net/?retryWrites=true&w=majority&appName=centricity-shipping-api-log`
     // initialize mongo db 
     const client = new MongoClient(uri)
     

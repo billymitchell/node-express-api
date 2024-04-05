@@ -12,27 +12,9 @@
 
 let run_test = false
 
-let testing_data = `{
-  "id": "b44814568f99e088d3282e9d0c0e115f",
-  "received_at": "2024-02-23 03:49:22",
-  "processed_at": "2024-02-23 03:49:24",
-  "mail_attachments": [
-      {
-          "brightstores_order_id": "100369",
-          "order_metadata_brightstores_site_url": "https://ftg-shop.mybrightsites.com",
-          "brightstores_shipping_method": "UPS Worldwide Express",
-          "order_items_brightstores_line_item_id": "28227236",
-          "order_items_code": "121998-5star-pushpin",
-          "order_items_name": "Flatback Clutch Pin",
-          "shipment_quantity": "350.00",
-          "ship_date": "2/22/2024",
-          "tracking_number": "1Z52499E6754487188"
-      },
-  ]
-}
+let testing_data = `
+{"id":"36ca0d09c9daa9eb4a7426353be2b801","received_at":"2024-04-05 02:49:27","processed_at":"2024-04-05 02:49:30","mail_attachments":[{"brightstores_order_id":"100359","order_metadata_brightstores_site_url":"https:\/\/ftg-shop.mybrightsites.com","brightstores_shipping_method":"UPS Worldwide Expedited","order_items_brightstores_line_item_id":"28212494","order_items_code":"121998-16-ac-str5-24","order_items_name":"Indoor Award Plaque","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6754407960"},{"brightstores_order_id":"100363","order_metadata_brightstores_site_url":"https:\/\/ftg-shop.mybrightsites.com","brightstores_shipping_method":"UPS Ground","order_items_brightstores_line_item_id":"28215514","order_items_code":"121998-16-ac-str5-24","order_items_name":"Indoor Award Plaque","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E0352309136"},{"brightstores_order_id":"100375","order_metadata_brightstores_site_url":"https:\/\/ftg-shop.mybrightsites.com","brightstores_shipping_method":"UPS Worldwide Expedited","order_items_brightstores_line_item_id":"28250731","order_items_code":"121998-16-ac-str5-24","order_items_name":"Indoor Award Plaque","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6753289582"},{"brightstores_order_id":"1045","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28213683","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6754755978"},{"brightstores_order_id":"1050","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28220632","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E0353148540"},{"brightstores_order_id":"1052","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28221959","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E0352540153"},{"brightstores_order_id":"1054","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28233027","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6753593878"},{"brightstores_order_id":"1056","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28239097","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6752687868"},{"brightstores_order_id":"1057","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28239187","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6754024089"},{"brightstores_order_id":"1058","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28237234","order_items_code":"121998-16-ac-rec-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E0352142495"},{"brightstores_order_id":"1073","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28273186","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6754917990"},{"brightstores_order_id":"1074","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28273806","order_items_code":"redemption-121998-16-ac-str5-24-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6753495411"},{"brightstores_order_id":"1076","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28274004","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6753478609"},{"brightstores_order_id":"1077","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28281984","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6754357550"},{"brightstores_order_id":"1078","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28289837","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E0354533363"},{"brightstores_order_id":"1080","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28292185","order_items_code":"121998-16-ac-str5-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E6752817940"},{"brightstores_order_id":"1081","order_metadata_brightstores_site_url":"https:\/\/ftg-redemption.mybrightsites.com","brightstores_shipping_method":"Free Shipping","order_items_brightstores_line_item_id":"28301966","order_items_code":"121998-16-ac-rec-24","order_items_name":"2024 Partner Redemption Award","shipment_quantity":"1.00","ship_date":"4\/4\/2024","tracking_number":"1Z52499E0353549376"}]}
 `
-
-
 
 // import keys 
 require('dotenv').config()
@@ -72,19 +54,23 @@ let all_tracking_codes = []
 app.post("/brightsites/shipping/tracking/mailparser/order-items/", async (request, response) => {
 
   let items
+  let date_received
 
   // if test use testing data 
   if (run_test == true) {
     console.log("Running Test");
     items = JSON.parse(testing_data).mail_attachments
+    // date of data sent to mailparser
+    date_received = JSON.parse(testing_data).received_at
     console.log(items);
   } if (run_test == false) {
     // set body object with incoming data from post method
     items = request.body.mail_attachments
+    // date of data sent to mailparser
+    date_received = request.body.received_at
   }
 
-  // date of data sent to mailparser
-  let date_received = request.body.received_at
+  
   
   // Insert all tracking codes into all_tracking_codes
   items.forEach((item) => {
