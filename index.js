@@ -9,7 +9,7 @@ const updateOrder = require("./update_order");
 const brightsites_stores = require("./brightsites_stores");
 const testing_data = require("./test.json");
 
-const run_test = "true"
+const run_test = "false"
 
 // TODO: Setup MongoDB connection for robust logging
 // e.g., const { MongoClient } = require("mongodb");
