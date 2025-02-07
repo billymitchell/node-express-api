@@ -9,6 +9,8 @@ const updateOrder = require("./update_order");
 const brightsites_stores = require("./brightsites_stores");
 const testing_data = require("./test.json");
 
+const run_test = "false"
+
 // TODO: Setup MongoDB connection for robust logging
 // e.g., const { MongoClient } = require("mongodb");
 // const client = new MongoClient(process.env.MONGO_URI);
@@ -55,9 +57,16 @@ async function handlePostRequest(req, res) {
   // Destructure items and date received from request body
   const { mail_attachments: items, received_at: date_received } = req.body;
   
-  // Get the API key from the header
-  const apiKey = req.headers["api-key"];
-  console.log("Header API Key:", apiKey);
+  // Get the API key from the Authorization header (Basic auth)
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith("Basic ")) {
+    return res.status(401).send("Unauthorized");
+  }
+  const base64Credentials = authHeader.split(" ")[1];
+  const credentials = Buffer.from(base64Credentials, "base64").toString("ascii"); // e.g., "apiKey:password"
+  // Assuming the API key is provided as the username in "username:password"
+  const apiKey = credentials.split(":")[0];
+  console.log("Extracted API Key from Basic Auth:", apiKey);
 
   // Validate API key - if invalid, send Unauthorized response.
   if (!apiKey || apiKey !== process.env.GENERAL_ACCESS_KEY) {
@@ -155,7 +164,7 @@ app.listen(port, async () => {
   console.log(`Server running on port ${port}`);
 
   // If RUN_TEST is true in environment settings, simulate a POST request using test data.
-  if (process.env.RUN_TEST === "true") {
+  if (run_test === "true") {
     console.log("RUN_TEST is true – invoking POST request with testing data");
     const dummyReq = {
       body: testing_data,
