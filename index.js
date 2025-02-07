@@ -57,20 +57,12 @@ async function handlePostRequest(req, res) {
   // Destructure items and date received from request body
   const { mail_attachments: items, received_at: date_received } = req.body;
   
-  // Get the API key from the Authorization header (Basic auth)
-  const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith("Basic ")) {
-    return res.status(401).send("Unauthorized");
-  }
-  const base64Credentials = authHeader.split(" ")[1];
-  const credentials = Buffer.from(base64Credentials, "base64").toString("ascii"); // e.g., "apiKey:password"
-  // Assuming the API key is provided as the username in "username:password"
-  const apiKey = credentials.split(":")[0];
-  console.log("Extracted API Key from Basic Auth:", apiKey);
+  // Extract the API key from the custom header "GENERAL_ACCESS_KEY"
+  const apiKey = req.headers["GENERAL_ACCESS_KEY"];
+  console.log("Extracted API Key from header:", GENERAL_ACCESS_KEY);
 
-  // Validate API key - if invalid, send Unauthorized response.
-  if (!apiKey || apiKey !== process.env.GENERAL_ACCESS_KEY) {
-    return res.status(401).send("Unauthorized", apiKey);
+  if (!GENERAL_ACCESS_KEY || GENERAL_ACCESS_KEY !== process.env.GENERAL_ACCESS_KEY) {
+    return res.status(401).send("Unauthorized");
   }
 
   // Get the current formatted date for logging notes in each update
