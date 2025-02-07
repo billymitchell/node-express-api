@@ -70,7 +70,7 @@ async function handlePostRequest(req, res) {
 
   // Validate API key - if invalid, send Unauthorized response.
   if (!apiKey || apiKey !== process.env.GENERAL_ACCESS_KEY) {
-    return res.status(401).send("Unauthorized");
+    return res.status(401).send("Unauthorized", apiKey);
   }
 
   // Get the current formatted date for logging notes in each update
