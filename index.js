@@ -9,7 +9,7 @@ const updateOrder = require("./update_order");
 const brightsites_stores = require("./brightsites_stores");
 const testing_data = require("./test.json");
 
-const run_test = "false"
+const run_test = "true"
 
 // TODO: Setup MongoDB connection for robust logging
 // e.g., const { MongoClient } = require("mongodb");
@@ -59,9 +59,9 @@ async function handlePostRequest(req, res) {
   
   // Extract the API key from the custom header "GENERAL_ACCESS_KEY"
   const apiKey = req.headers["GENERAL_ACCESS_KEY"];
-  console.log("Extracted API Key from header:", GENERAL_ACCESS_KEY);
+  console.log("Extracted API Key from header:", apiKey);
 
-  if (!GENERAL_ACCESS_KEY || GENERAL_ACCESS_KEY !== process.env.GENERAL_ACCESS_KEY) {
+  if (!apiKey || apiKey !== process.env.GENERAL_ACCESS_KEY) {
     return res.status(401).send("Unauthorized");
   }
 
@@ -160,7 +160,7 @@ app.listen(port, async () => {
     console.log("RUN_TEST is true – invoking POST request with testing data");
     const dummyReq = {
       body: testing_data,
-      headers: { "api-key": process.env.GENERAL_ACCESS_KEY },
+      headers: { "GENERAL_ACCESS_KEY": process.env.GENERAL_ACCESS_KEY },
     };
     // dummyRes mimics a minimal express response object.
     const dummyRes = {
