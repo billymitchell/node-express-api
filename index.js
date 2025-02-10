@@ -57,12 +57,12 @@ async function handlePostRequest(req, res) {
   // Destructure items and date received from request body
   const { mail_attachments: items, received_at: date_received } = req.body;
   
-  // Extract the API key from the custom header "GENERAL_ACCESS_KEY"
-  const apiKey = req.headers["GENERAL_ACCESS_KEY"];
+  // Extract the API key from the custom header "general_access_key"
+  const apiKey = req.headers["general_access_key"];
   console.log("Extracted API Key from header:", apiKey);
 
   if (!apiKey || apiKey !== process.env.GENERAL_ACCESS_KEY) {
-    return res.status(401).send("Unauthorized", apiKey);
+    return res.status(401).send("Unauthorized");
   }
 
   // Get the current formatted date for logging notes in each update
