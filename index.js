@@ -62,7 +62,7 @@ async function handlePostRequest(req, res) {
   console.log("Extracted API Key from header:", apiKey);
 
   if (!apiKey || apiKey !== process.env.GENERAL_ACCESS_KEY) {
-    return res.status(401).send("Unauthorized");
+    return res.status(401).send("Unauthorized", apiKey);
   }
 
   // Get the current formatted date for logging notes in each update
@@ -136,7 +136,7 @@ async function handlePostRequest(req, res) {
 
   // Return the overall outcome: success if no errors, else detailed history.
   if (!oneOrMoreErrors) {
-    res.status(200).send("Request Complete");
+    res.status(200).send(all_request_history);
   } else {
     res.status(400).send(all_request_history);
   }
