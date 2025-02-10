@@ -1,82 +1,8 @@
-[
-    {
-        "request_history": {
-            "response_okay": false,
-            "status_text": "Not Acceptable",
-            "status": 406,
-            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0352092610\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-5\",\"note\":\"Updated From Centricity API on 2025-2-5 3:4:24 from data received 2025-02-06 03:51:32\",\"shipping_method\":\"No Shipping Method\",\"line_items\":[{\"id\":33949943,\"quantity\":1}]}}"
-        }
-    },
-    {
-        "request_history": {
-            "response_okay": false,
-            "status_text": "Not Acceptable",
-            "status": 406,
-            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0353731801\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-5\",\"note\":\"Updated From Centricity API on 2025-2-5 3:4:24 from data received 2025-02-06 03:51:32\",\"shipping_method\":\"No Shipping Method\",\"line_items\":[{\"id\":33949947,\"quantity\":1}]}}"
-        }
-    },
-    {
-        "request_history": {
-            "response_okay": false,
-            "status_text": "Not Acceptable",
-            "status": 406,
-            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0352675731\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-5\",\"note\":\"Updated From Centricity API on 2025-2-5 3:4:24 from data received 2025-02-06 03:51:32\",\"shipping_method\":\"No Shipping Method\",\"line_items\":[{\"id\":33950029,\"quantity\":1}]}}"
-        }
-    },
-    {
-        "request_history": {
-            "response_okay": false,
-            "status_text": "Not Acceptable",
-            "status": 406,
-            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E6753707192\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-5\",\"note\":\"Updated From Centricity API on 2025-2-5 3:4:24 from data received 2025-02-06 03:51:32\",\"shipping_method\":\"No Shipping Method\",\"line_items\":[{\"id\":33950249,\"quantity\":1}]}}"
-        }
-    },
-    {
-        "request_history": {
-            "response_okay": false,
-            "status_text": "Not Acceptable",
-            "status": 406,
-            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E6752318837\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-5\",\"note\":\"Updated From Centricity API on 2025-2-5 3:4:24 from data received 2025-02-06 03:51:32\",\"shipping_method\":\"No Shipping Method\",\"line_items\":[{\"id\":33938283,\"quantity\":1}]}}"
-        }
-    },
-    {
-        "request_history": {
-            "response_okay": false,
-            "status_text": "Not Acceptable",
-            "status": 406,
-            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0352894781\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-5\",\"note\":\"Updated From Centricity API on 2025-2-5 3:4:24 from data received 2025-02-06 03:51:32\",\"shipping_method\":\"No Shipping Method\",\"line_items\":[{\"id\":33952134,\"quantity\":1}]}}"
-        }
-    },
-    {
-        "request_history": {
-            "response_okay": false,
-            "status_text": "Not Acceptable",
-            "status": 406,
-            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0352090756\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-5\",\"note\":\"Updated From Centricity API on 2025-2-5 3:4:24 from data received 2025-02-06 03:51:32\",\"shipping_method\":\"No Shipping Method\",\"line_items\":[{\"id\":33952138,\"quantity\":1}]}}"
-        }
-    },
-    {
-        "request_history": {
-            "response_okay": false,
-            "status_text": "Not Acceptable",
-            "status": 406,
-            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0354210569\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-5\",\"note\":\"Updated From Centricity API on 2025-2-5 3:4:24 from data received 2025-02-06 03:51:32\",\"shipping_method\":\"No Shipping Method\",\"line_items\":[{\"id\":33952143,\"quantity\":1}]}}"
-        }
-    },
-    {
-        "request_history": {
-            "response_okay": false,
-            "status_text": "Not Acceptable",
-            "status": 406,
-            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0354487146\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-5\",\"note\":\"Updated From Centricity API on 2025-2-5 3:4:24 from data received 2025-02-06 03:51:32\",\"shipping_method\":\"No Shipping Method\",\"line_items\":[{\"id\":33952210,\"quantity\":1}]}}"
-        }
-    },
-    {
-        "request_history": {
-            "response_okay": false,
-            "status_text": "Not Acceptable",
-            "status": 406,
-            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0353412521\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-5\",\"note\":\"Updated From Centricity API on 2025-2-5 3:4:24 from data received 2025-02-06 03:51:32\",\"shipping_method\":\"No Shipping Method\",\"line_items\":[{\"id\":33952213,\"quantity\":1}]}}"
-        }
+{
+    "request_history": {
+        "response_okay": false,
+        "status_text": "Not Acceptable",
+        "status": 406,
+        "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0354730177\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-7\",\"note\":\"Updated From Centricity API on 2025-02-10 18:00:33 from data received 2025-02-08 03:51:30\",\"shipping_method\":\"Free Shipping\",\"line_items\":[{\"id\":33912679,\"quantity\":1}]}}"
     }
-]
+}

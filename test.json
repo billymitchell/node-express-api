@@ -1,95 +1,18 @@
 {
-    "id": "b6509faa11c7c42a7c64cd9cfd63750f",
-    "received_at": "2025-02-07 03:51:31",
-    "processed_at": "2025-02-07 03:51:31",
+    "id": "8b4f170233163fa984811a3ceb354847",
+    "received_at": "2025-02-08 03:51:30",
+    "processed_at": "2025-02-08 03:51:31",
     "mail_attachments": [
         {
-            "brightstores_order_id": "100567",
-            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
-            "brightstores_shipping_method": "UPS Ground",
-            "order_items_brightstores_line_item_id": "33920046",
-            "order_items_code": "121998-magback-4star",
-            "order_items_name": "Magnetic Pin",
-            "shipment_quantity": "1,000.00",
-            "ship_date": "2\/6\/2025",
-            "tracking_number": "1Z52499E0352707161"
-        },
-        {
-            "brightstores_order_id": "100590",
-            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
-            "brightstores_shipping_method": "UPS Worldwide Express",
-            "order_items_brightstores_line_item_id": "34022559",
-            "order_items_code": "121998-magback-rec",
-            "order_items_name": "Magnetic Pin",
-            "shipment_quantity": "200.00",
-            "ship_date": "2\/6\/2025",
-            "tracking_number": "1Z52499E6752885411"
-        },
-        {
-            "brightstores_order_id": "100591",
-            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
-            "brightstores_shipping_method": "UPS Ground",
-            "order_items_brightstores_line_item_id": "34027929",
-            "order_items_code": "121998-pushpin-4star",
-            "order_items_name": "Flatback Clutch Pin",
+            "brightstores_order_id": "1275",
+            "order_metadata_brightstores_site_url": "https:\/\/ftg-redemption.mybrightsites.com",
+            "brightstores_shipping_method": "Free Shipping",
+            "order_items_brightstores_line_item_id": "33912679",
+            "order_items_code": "redemption-121998-16-ac-str5-24",
+            "order_items_name": "2024 Partner Redemption Award",
             "shipment_quantity": "1.00",
-            "ship_date": "2\/6\/2025",
-            "tracking_number": "1Z52499E0352762422"
-        },
-        {
-            "brightstores_order_id": "100591",
-            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
-            "brightstores_shipping_method": "UPS Ground",
-            "order_items_brightstores_line_item_id": "34027929",
-            "order_items_code": "121998-pushpin-4star",
-            "order_items_name": "Flatback Clutch Pin",
-            "shipment_quantity": "100.00",
-            "ship_date": "2\/6\/2025",
-            "tracking_number": "1Z52499E0352762422"
-        },
-        {
-            "brightstores_order_id": "100597",
-            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
-            "brightstores_shipping_method": "UPS Ground",
-            "order_items_brightstores_line_item_id": "34054032",
-            "order_items_code": "121998-pushpin-5star",
-            "order_items_name": "Flatback Clutch Pin",
-            "shipment_quantity": "50.00",
-            "ship_date": "2\/6\/2025",
-            "tracking_number": "1Z52499E0352270669"
-        },
-        {
-            "brightstores_order_id": "100597",
-            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
-            "brightstores_shipping_method": "UPS Ground",
-            "order_items_brightstores_line_item_id": "34054095",
-            "order_items_code": "121998-magback-5star",
-            "order_items_name": "Magnetic Pin",
-            "shipment_quantity": "50.00",
-            "ship_date": "2\/6\/2025",
-            "tracking_number": "1Z52499E0352748859"
-        },
-        {
-            "brightstores_order_id": "100599",
-            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
-            "brightstores_shipping_method": "UPS Ground",
-            "order_items_brightstores_line_item_id": "34078815",
-            "order_items_code": "121998-pushpin-5star",
-            "order_items_name": "Flatback Clutch Pin",
-            "shipment_quantity": "250.00",
-            "ship_date": "2\/6\/2025",
-            "tracking_number": "1Z52499E0352134468"
-        },
-        {
-            "brightstores_order_id": "100599",
-            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
-            "brightstores_shipping_method": "UPS Ground",
-            "order_items_brightstores_line_item_id": "34078823",
-            "order_items_code": "121998-magback-5star",
-            "order_items_name": "Magnetic Pin",
-            "shipment_quantity": "250.00",
-            "ship_date": "2\/6\/2025",
-            "tracking_number": "1Z52499E0354736653"
+            "ship_date": "2\/7\/2025",
+            "tracking_number": "1Z52499E0354730177"
         }
     ]
 }

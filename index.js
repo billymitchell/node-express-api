@@ -80,7 +80,11 @@ async function handlePostRequest(req, res) {
 
     // Determine shipping method; set to UPS Ground if unknown or not specified.
     let shipping_method = items_in_shipment[0].brightstores_shipping_method;
-    if (shipping_method === "Unknown Shipping Method" || shipping_method === "No Shipping Method") {
+    if (
+      shipping_method === "Unknown Shipping Method" || 
+      shipping_method === "No Shipping Method" ||
+      shipping_method === "Free Shipping"
+    ) {
       shipping_method = "UPS Ground";
     }
 
@@ -160,7 +164,7 @@ app.listen(port, async () => {
     console.log("RUN_TEST is true – invoking POST request with testing data");
     const dummyReq = {
       body: testing_data,
-      headers: { "GENERAL_ACCESS_KEY": process.env.GENERAL_ACCESS_KEY },
+      headers: { "general_access_key": process.env.GENERAL_ACCESS_KEY },
     };
     // dummyRes mimics a minimal express response object.
     const dummyRes = {
