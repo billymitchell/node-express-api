@@ -1,18 +1,73 @@
 {
-    "id": "8b4f170233163fa984811a3ceb354847",
-    "received_at": "2025-02-08 03:51:30",
-    "processed_at": "2025-02-08 03:51:31",
+    "id": "1e3112b1b9b963e457142ddd205b0992",
+    "received_at": "2025-04-10 12:31:14",
+    "processed_at": "2025-04-10 12:31:15",
     "mail_attachments": [
         {
-            "brightstores_order_id": "1275",
-            "order_metadata_brightstores_site_url": "https:\/\/ftg-redemption.mybrightsites.com",
-            "brightstores_shipping_method": "Free Shipping",
-            "order_items_brightstores_line_item_id": "33912679",
-            "order_items_code": "redemption-121998-16-ac-str5-24",
-            "order_items_name": "2024 Partner Redemption Award",
+            "brightstores_order_id": "100704",
+            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
+            "brightstores_shipping_method": "UPS Ground",
+            "order_items_brightstores_line_item_id": "35129467",
+            "order_items_code": "TM110-WH-XL",
+            "order_items_name": "",
+            "shipment_quantity": "2.00",
+            "ship_date": "4\/4\/2025",
+            "tracking_number": "1Z52499E0353556699"
+        },
+        {
+            "brightstores_order_id": "100703",
+            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
+            "brightstores_shipping_method": "UPS Ground",
+            "order_items_brightstores_line_item_id": "35128858",
+            "order_items_code": "TW905S-WH-SM",
+            "order_items_name": "",
+            "shipment_quantity": "2.00",
+            "ship_date": "4\/4\/2025",
+            "tracking_number": "1Z52499E0353556699"
+        },
+        {
+            "brightstores_order_id": "100703",
+            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
+            "brightstores_shipping_method": "UPS Ground",
+            "order_items_brightstores_line_item_id": "35128869",
+            "order_items_code": "TW905S-WH-MD",
+            "order_items_name": "TW905S-WH-MD-",
             "shipment_quantity": "1.00",
-            "ship_date": "2\/7\/2025",
-            "tracking_number": "1Z52499E0354730177"
+            "ship_date": "4\/4\/2025",
+            "tracking_number": "1Z52499E0353556699"
+        },
+        {
+            "brightstores_order_id": "100703",
+            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
+            "brightstores_shipping_method": "UPS Ground",
+            "order_items_brightstores_line_item_id": "35128921",
+            "order_items_code": "TW905S-BLK-SM",
+            "order_items_name": "",
+            "shipment_quantity": "2.00",
+            "ship_date": "4\/4\/2025",
+            "tracking_number": "1Z52499E0353556699"
+        },
+        {
+            "brightstores_order_id": "100703",
+            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
+            "brightstores_shipping_method": "UPS Ground",
+            "order_items_brightstores_line_item_id": "35128947",
+            "order_items_code": "TW905S-WH-LG",
+            "order_items_name": "",
+            "shipment_quantity": "1.00",
+            "ship_date": "4\/4\/2025",
+            "tracking_number": "1Z52499E0353556699"
+        },
+        {
+            "brightstores_order_id": "100703",
+            "order_metadata_brightstores_site_url": "https:\/\/ftg-shop.mybrightsites.com",
+            "brightstores_shipping_method": "UPS Ground",
+            "order_items_brightstores_line_item_id": "35128971",
+            "order_items_code": "TW905S-WH-XL",
+            "order_items_name": "",
+            "shipment_quantity": "2.00",
+            "ship_date": "4\/4\/2025",
+            "tracking_number": "1Z52499E0353556699"
         }
     ]
 }

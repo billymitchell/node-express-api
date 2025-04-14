@@ -1,8 +1,10 @@
-{
-    "request_history": {
-        "response_okay": false,
-        "status_text": "Not Acceptable",
-        "status": 406,
-        "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0354730177\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-2-7\",\"note\":\"Updated From Centricity API on 2025-02-10 18:00:33 from data received 2025-02-08 03:51:30\",\"shipping_method\":\"Free Shipping\",\"line_items\":[{\"id\":33912679,\"quantity\":1}]}}"
+[
+    {
+        "request_history": {
+            "response_okay": false,
+            "status_text": "Not Acceptable",
+            "status": 406,
+            "payload": "{\"shipment\":{\"tracking_number\":\"1Z52499E0353556699\",\"send_shipping_confirmation\":true,\"ship_date\":\"2025-4-4\",\"note\":\"Updated From Centricity API on 2025-04-10 12:31:15 from data received 2025-04-10 12:31:14\",\"shipping_method\":\"UPS Ground\",\"line_items\":[{\"id\":35129467,\"quantity\":2},{\"id\":35128858,\"quantity\":2},{\"id\":35128869,\"quantity\":1},{\"id\":35128921,\"quantity\":2},{\"id\":35128947,\"quantity\":1},{\"id\":35128971,\"quantity\":2}]}}"
+        }
     }
-}
+]
